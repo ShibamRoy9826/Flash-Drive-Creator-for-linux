@@ -3,6 +3,4 @@ As we all know there is no good flash drive creator on linux like Rufus. So in t
 
 Python Libraties:
 
-Package Version
-------- -------
-pip     24.0
+> pip     24.0
