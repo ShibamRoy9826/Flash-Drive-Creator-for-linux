@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import os
 
 print("Type 'help' for help and 'exit'")
@@ -13,13 +14,22 @@ drive = input("Please type in the name of the Drive you want to flash: ")
 iso = input("Please enter the path to your iso file: ")
 verif = input("All data on your drive will be lost. Do you want to continue?[Y/n]: ")
 
-# Step 1:
-# Unmount drive
-os.system(command="sudo umount "+ drive)
+if verif == "Y":
 
-# Step 2:
-# Create the Bootable USB
+    # Step 1:
+    # Unmount drive
+    os.system(command="sudo umount "+ drive)
 
-#print("sudo dd if=" + iso + " of="+ drive +" bs=4M status=progress")
+    # Step 2:
+    # Create the Bootable USB
 
-os.system(command="sudo dd if=" + iso + " of=/dev/sdX bs=4M status=progress")
+    #print("sudo dd if=" + iso + " of="+ drive +" bs=4M status=progress")
+
+    os.system(command="sudo dd if=" + iso + " of=/dev/sdX bs=4M status=progress")
+
+    # Step 4:
+    # Sync and eject
+    os.system(command="sudo sync")
+
+else:
+    print("...................TASK ABORTED.....................")
