@@ -9,7 +9,7 @@ Welcome to the Flash Drive Creator!
 Type 'help' for help or 'exit' to close this application\n
 """
 
-helpMessage="""
+helpmsg="""
  Press enter to see the available drives and continue with the installation
 """
 
@@ -35,5 +35,5 @@ def createBootable(drive,iso):
 def welcomeMessage():
   print(welcome)
 def helpMessage():
-  print(helpMessage)
+  print(helpmsg)
 
